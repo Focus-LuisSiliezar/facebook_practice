@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_fb_practice/config/palette.dart';
 import 'package:flutter_fb_practice/models/user_model.dart';
+import 'package:flutter_fb_practice/widget/profile_avatar.dart';
 
 class Rooms extends StatelessWidget {
   final List<User> onlineUser;
@@ -22,11 +23,13 @@ class Rooms extends StatelessWidget {
               child: _CreateRoomButton(),
             );
           }
-          return Container(
-            margin: const EdgeInsets.all(2.0),
-            height: 20.0,
-            width: 20.0,
-            color: Colors.red,
+          final User user = onlineUser[index - 1];
+          return Padding(
+            padding: EdgeInsets.symmetric(horizontal: 8.0),
+            child: ProfileAvatar(
+              imageUrl: user.imageUrl,
+              isActive: true,
+            ),
           );
         },
       ),
@@ -40,7 +43,7 @@ class _CreateRoomButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return OutlinedButton(
-      onPressed: () => print("Create \n Room"),
+      onPressed: () => print("Create\nRoom"),
       style: ButtonStyle(
         shape: MaterialStateProperty.all<RoundedRectangleBorder>(
           RoundedRectangleBorder(
@@ -62,9 +65,12 @@ class _CreateRoomButton extends StatelessWidget {
               size: 35.0,
             ),
           ),
-          const Text(
-            'Create\nRoom',
-            style: TextStyle(color: Palette.facebookBlue),
+          const Padding(
+            padding: EdgeInsets.only(left: 5.0),
+            child: Text(
+              'Create\nRoom',
+              style: TextStyle(color: Palette.facebookBlue),
+            ),
           )
         ],
       ),
