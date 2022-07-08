@@ -2,13 +2,13 @@ import 'package:flutter_fb_practice/models/post_model.dart';
 import 'package:flutter_fb_practice/models/story_model.dart';
 import 'package:flutter_fb_practice/models/user_model.dart';
 
-final User currentUser = User(
+const User currentUser = User(
   name: 'Marcus Ng',
   imageUrl:
       'https://images.unsplash.com/photo-1578133671540-edad0b3d689e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80',
 );
 
-final List<User> onlineUsers = [
+const List<User> onlineUsers = [
   User(
     name: 'David Brooks',
     imageUrl:
@@ -37,7 +37,7 @@ final List<User> onlineUsers = [
   User(
     name: 'Carolyn Duncan',
     imageUrl:
-        'https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80',
+        'https://images.pexels.com/photos/12681200/pexels-photo-12681200.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
   ),
   User(
     name: 'Paul Pinnock',

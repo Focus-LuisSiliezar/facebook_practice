@@ -42,11 +42,11 @@ class HomeScreen extends StatelessWidget {
                   key: key),
             ],
           ),
-          SliverToBoxAdapter(
+          const SliverToBoxAdapter(
             child: CreatePostContainer(currentUser: currentUser),
           ),
-          SliverPadding(
-            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
+          const SliverPadding(
+            padding: EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 5.0),
             sliver: SliverToBoxAdapter(
               child: Rooms(
                 onlineUser: onlineUsers,
@@ -59,12 +59,15 @@ class HomeScreen extends StatelessWidget {
               child: Stories(currentUser: currentUser, stories: stories),
             ),
           ),
-          SliverList(delegate: SliverChildBuilderDelegate(
-            (context, index) {
-              final Post post = posts[index];
-              return PostContainer(post: post);
-            },
-          ))
+          SliverList(
+            delegate: SliverChildBuilderDelegate(
+              (context, index) {
+                final Post post = posts[index];
+                return PostContainer(post: post);
+              },
+              childCount: posts.length,
+            ),
+          )
         ],
       ),
     );
