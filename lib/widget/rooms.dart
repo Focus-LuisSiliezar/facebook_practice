@@ -55,17 +55,22 @@ class _CreateRoomButton extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.start,
-        children: [
-          ShaderMask(
-            shaderCallback: (rect) =>
-                Palette.createRoomGradient.createShader(rect),
-            child: const Icon(
-              Icons.video_call,
-              color: Colors.white,
-              size: 35.0,
-            ),
+        children: const [
+          // ShaderMask(
+          //   shaderCallback: (rect) =>
+          //       Palette.createRoomGradient.createShader(rect),
+          //   child: const Icon(
+          //     Icons.video_call,
+          //     color: Colors.white,
+          //     size: 35.0,
+          //   ),
+          // ),
+          Icon(
+            Icons.video_call,
+            color: Colors.purple,
+            size: 35.0,
           ),
-          const Padding(
+          Padding(
             padding: EdgeInsets.only(left: 5.0),
             child: Text(
               'Create\nRoom',

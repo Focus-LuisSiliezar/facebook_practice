@@ -1,6 +1,8 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_fb_practice/config/palette.dart';
 import 'package:flutter_fb_practice/screens/home_screen.dart';
+import 'package:flutter_fb_practice/screens/nav_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,6 +15,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      // FOR WEB SCROLL BEHAVIOURS
+      scrollBehavior: const MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown
+        },
+      ),
       debugShowCheckedModeBanner: false,
       title: 'Facebook UI',
       theme: ThemeData(
@@ -20,7 +31,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
         scaffoldBackgroundColor: Palette.scaffold,
       ),
-      home: const HomeScreen(),
+      home: const NavScreen(),
     );
   }
 }
