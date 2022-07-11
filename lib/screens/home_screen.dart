@@ -5,6 +5,7 @@ import 'package:flutter_fb_practice/models/post_model.dart';
 import 'package:flutter_fb_practice/widget/circle_button.dart';
 import 'package:flutter_fb_practice/widget/contacts_list.dart';
 import 'package:flutter_fb_practice/widget/create_post_container.dart';
+import 'package:flutter_fb_practice/widget/more_options_list.dart';
 import 'package:flutter_fb_practice/widget/post_container.dart';
 import 'package:flutter_fb_practice/widget/responsive.dart';
 import 'package:flutter_fb_practice/widget/rooms.dart';
@@ -123,11 +124,9 @@ class _HomeScreenDesktop extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        Flexible(
+        const Flexible(
           flex: 2,
-          child: Container(
-            color: Colors.orange,
-          ),
+          child: MoreOptionsList(currentUser: currentUser),
         ),
         const Spacer(),
         SizedBox(
